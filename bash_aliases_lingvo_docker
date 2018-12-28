@@ -1,0 +1,38 @@
+# Enable advanced regrex matching
+shopt -s extglob
+ 
+# Color defs
+shell_black="\033[00m";
+shell_red="\033[00;31m";
+shell_green="\033[00;32m";
+shell_yellow="\033[00;33m";
+shell_blue="\033[00;34m";
+shell_magenta="\033[00;35m";
+shell_cyan="\033[00;36m";
+shell_white="\033[00;37m";
+ 
+alias bbo='bazel build -c opt ' # --copt=-mavx
+alias bto='bazel test -c opt --test_output=all' #--config=asan --config=tsan --config=memcheck
+alias br='bazel run -c opt'
+alias bq='bazel query'
+ 
+alias krm='google-chrome'
+alias dbstop='blaze-bin/speech/recipes/dist_belief/speech_launcher --stop'
+ 
+alias mdt=/google/data/ro/projects/speech/service/tools/model_distribution_tool.par
+ 
+# Use MPM binary.
+alias tb='fuser -k 2222/tcp; learning/brain/tensorboard/tensorboard.sh --port 2222 
+
+#------------------------------------------------------------------------#
+# Fuction aliases:
+
+# List process id for the script
+# Usage: psid [script]
+function psid {
+  if [ "$#" == 1 ]; then 
+    ps -ef | grep "$1"
+  else
+    echo "Only one script at a time."
+  fi
+}
