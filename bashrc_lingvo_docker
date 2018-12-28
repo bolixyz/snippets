@@ -89,7 +89,7 @@ alias l='ls -CF'
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 # Update bash_aliases file
-RUN curl -O https://raw.githubusercontent.com/bolixyz/snippets/master/bash_aliases_lingvo_docker && \
+curl -O https://raw.githubusercontent.com/bolixyz/snippets/master/bash_aliases_lingvo_docker && \
     mv bash_aliases_lingvo_docker ~/.bash_aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -97,7 +97,7 @@ fi
 
 # Execute bashrc_extra file
 # Update bash_aliases file
-RUN curl -O https://raw.githubusercontent.com/bolixyz/snippets/master/bashrc_extra_lingvo_docker && \
+curl -O https://raw.githubusercontent.com/bolixyz/snippets/master/bashrc_extra_lingvo_docker && \
     mv bashrc_extra_lingvo_docker ~/.bashrc_extra
 . ~/.bashrc_extra
 
