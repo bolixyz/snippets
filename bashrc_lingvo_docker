@@ -88,9 +88,18 @@ alias l='ls -CF'
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+# Update bash_aliases file
+RUN curl -O https://raw.githubusercontent.com/bolixyz/snippets/master/bash_aliases_lingvo_docker && \
+    mv bash_aliases_lingvo_docker ~/.bash_aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# Execute bashrc_extra file
+# Update bash_aliases file
+RUN curl -O https://raw.githubusercontent.com/bolixyz/snippets/master/bashrc_extra_lingvo_docker && \
+    mv bashrc_extra_lingvo_docker ~/.bashrc_extra
+. ~/.bashrc_extra
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
