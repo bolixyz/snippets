@@ -17,12 +17,7 @@ alias br='bazel run -c opt'
 alias bq='bazel query'
  
 alias krm='google-chrome'
-alias dbstop='blaze-bin/speech/recipes/dist_belief/speech_launcher --stop'
- 
-alias mdt=/google/data/ro/projects/speech/service/tools/model_distribution_tool.par
- 
-# Use MPM binary.
-alias tb='fuser -k 2222/tcp; learning/brain/tensorboard/tensorboard.sh --port 2222 
+alias dbstop='blaze-bin/speech_launcher --stop'
 
 #------------------------------------------------------------------------#
 # Fuction aliases:
