@@ -31,3 +31,19 @@ function psid {
     echo "Only one script at a time."
   fi
 }
+
+# Build docker for lingvo
+function lingvo_build {
+  sudo docker build --tag tensorflow:lingvo \
+    $(test "$LINGVO_DEVICE" = "gpu" && \
+      echo "--build-arg base_image=nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04") \
+    - < ${LINGVO_DIR}/docker/dev.dockerfile
+}
+
+# Start docker for lingvo
+function lingvo_run {
+  sudo docker run \
+    --rm $(test "$LINGVO_DEVICE" = "gpu" && echo "--runtime=nvidia") \
+    -it -v ${LINGVO_DIR}:/tmp/lingvo \
+    -p 6006:6006 -p 8888:8888 --name lingvo tensorflow:lingvo bash
+}
