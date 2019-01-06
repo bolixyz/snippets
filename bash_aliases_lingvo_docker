@@ -44,6 +44,6 @@ function lingvo_build {
 function lingvo_run {
   sudo docker run \
     --rm $(test "$LINGVO_DEVICE" = "gpu" && echo "--runtime=nvidia") \
-    -it -v ${LINGVO_DIR}:/tmp/lingvo \
+    -it -v ${LINGVO_DIR}:/tmp/lingvo ${EXTRA_DOCKER_VOLUMN_MOUNT_OPTION} \
     -p 6006:6006 -p 8888:8888 --name lingvo tensorflow:lingvo bash
 }
