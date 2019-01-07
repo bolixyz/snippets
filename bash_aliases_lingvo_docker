@@ -19,6 +19,9 @@ alias bq='bazel query'
 alias krm='google-chrome'
 alias dbstop='blaze-bin/speech_launcher --stop'
 
+alias sshcodepid='lsof -i -P | grep 52698'
+alias sshcode='ssh -R 52698:localhost:52698'
+
 #------------------------------------------------------------------------#
 # Fuction aliases:
 
