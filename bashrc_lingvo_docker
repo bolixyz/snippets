@@ -107,3 +107,7 @@ curl -O https://raw.githubusercontent.com/bolixyz/snippets/master/bashrc_extra_l
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
 #fi
+
+# export http_proxy=10.3.21.198:3128 https_proxy=10.3.21.198:3128
+# export http_proxy=10.100.4.68:3128 https_proxy=10.100.4.68:3128
+export http_proxy=10.110.216.52:3128 https_proxy=10.110.216.52:3128
