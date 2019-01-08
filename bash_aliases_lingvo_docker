@@ -42,7 +42,13 @@ function lingvo_build {
 }
 
 # Start docker for lingvo
+# Usage: lingvo_run [name]
 function lingvo_run {
+  if [ "$#" == 1 ]; then
+    name="$1"
+  else
+    name="lingvo"
+  fi
   docker run --rm --runtime=nvidia -it -v ${LINGVO_DIR}:/tmp/lingvo ${EXTRA_DOCKER_VOLUMN_MOUNT_OPTION} \
-  -p 6006:6006 -p 8888:8888 --name lingvo tensorflow:lingvo bash
+  -p 6006:6006 -p 8888:8888 --name ${name} tensorflow:lingvo bash
 }
