@@ -11,7 +11,7 @@ shell_magenta="\033[00;35m";
 shell_cyan="\033[00;36m";
 shell_white="\033[00;37m";
  
-alias bbo='bazel build -c opt ' # --copt=-mavx
+alias bbo='bazel --output_base output build -c opt --config cuda' # --copt=-mavx
 alias bto='bazel test -c opt --test_output=all' #--config=asan --config=tsan --config=memcheck
 alias br='bazel run -c opt'
 alias bq='bazel query'
