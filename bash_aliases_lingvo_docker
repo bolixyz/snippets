@@ -38,7 +38,7 @@ function psid {
 # Build docker for lingvo
 function lingvo_build {
   cd ${LINGVO_DIR}/docker
-  docker build --tag tensorflow:lingvo .
+  docker build --tag tensorflow:lingvo${DOCKER_SUFFIX} .
 }
 
 # Start docker for lingvo
@@ -47,7 +47,7 @@ function lingvo_run {
   if [ "$#" == 1 ]; then
     name="$1"
   else
-    name="lingvo"
+    name="lingvo${DOCKER_SUFFIX}"
   fi
   docker run --rm --runtime=nvidia -it -v ${LINGVO_DIR}:/tmp/lingvo ${EXTRA_DOCKER_VOLUMN_MOUNT_OPTION} \
   -p 6006:6006 -p 8888:8888 --name ${name} tensorflow:lingvo bash
