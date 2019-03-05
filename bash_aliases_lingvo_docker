@@ -50,5 +50,5 @@ function lingvo_run {
     name="lingvo${DOCKER_SUFFIX}"
   fi
   docker run --rm --runtime=nvidia -it -v ${LINGVO_DIR}:/tmp/lingvo ${EXTRA_DOCKER_VOLUMN_MOUNT_OPTION} \
-  -p 6006:6006 -p 8888:8888 --name ${name} tensorflow:lingvo bash
+  -p 6006:6006 -p 8888:8888 --name ${name} tensorflow:lingvo${DOCKER_SUFFIX} bash
 }
